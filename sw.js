@@ -1,5 +1,5 @@
 // imports
-importScripts('./js/sw-acces.js');
+importScripts('js/sw-acces.js');
 
 const STATIC_CACHE = "static-v1";
 const DYNAMIC_CACHE = "dynamic-v1";
@@ -15,7 +15,7 @@ const APP_SHELL = [
     'img/no-img.jpg',
     'img/porsche_1.jpg',
     'img/user.svg',
-    'pages/offline.html',
+    'paginas/offline.html',
 ];
 
 const APP_SHELL_INMUTABLE = [
@@ -69,7 +69,7 @@ self.addEventListener('fetch', event => {
             }
         }).catch(err => {
             if ( event.request.headers.get('accept').includes('text/html') ) {
-                return caches.match('pages/offline.html');
+                return caches.match('paginas/offline.html');
             };
         });
     event.respondWith(respuesta);
