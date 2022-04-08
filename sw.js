@@ -67,7 +67,7 @@ self.addEventListener('fetch', event => {
                     return actualizaCacheDinamico(DYNAMIC_CACHE, event.request, newRes);
                 }).catch(err => {
                     if ( event.request.headers.get('accept').includes('text/html') ) {
-                        return caches.match('pages/offline.html');
+                        return caches.match('/pages/offline.html');
                     };
     
                 });
