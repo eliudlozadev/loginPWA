@@ -65,12 +65,12 @@ self.addEventListener('fetch', event => {
             } else {
                 return fetch(event.request).then( newRes => {
                     return actualizaCacheDinamico(DYNAMIC_CACHE, event.request, newRes);
+                }).catch(err => {
+                    if ( event.request.headers.get('accept').includes('text/html') ) {
+                        return caches.match('paginas/offline.html');
+                    };
                 });
             }
-        }).catch(err => {
-            if ( event.request.headers.get('accept').includes('text/html') ) {
-                return caches.match('paginas/offline.html');
-            };
         });
     event.respondWith(respuesta);
 });
