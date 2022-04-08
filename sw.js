@@ -15,12 +15,12 @@ const APP_SHELL = [
     'img/no-img.jpg',
     'img/porsche_1.jpg',
     'img/user.svg',
-    'paginas/offline.html',
 ];
 
 const APP_SHELL_INMUTABLE = [
     'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css',
-    'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js'
+    'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js',
+    'paginas/offline.html',
 ];
 
 
