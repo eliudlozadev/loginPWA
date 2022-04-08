@@ -22,7 +22,6 @@ const APP_SHELL = [
 const APP_SHELL_INMUTABLE = [
     'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css',
     'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js',
-    'paginas/page2.html'
 ];
 
 
@@ -80,6 +79,11 @@ self.addEventListener( 'fetch', e => {
             return fetch( e.request ).then( newRes => {
 
                 return actualizaCacheDinamico( DYNAMIC_CACHE, e.request, newRes );
+
+            }).catch(err => {
+                if ( e.request.headers.get('accept').includes('text/html') ) {
+                    return caches.match('paginas/offline.html');
+                };
 
             });
 
