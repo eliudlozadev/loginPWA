@@ -24,7 +24,7 @@ form.addEventListener("submit", function(event) {
         document.getElementById("notification").innerHTML = 'Bienvenido!';
         document.getElementById("notification").style.display = 'block';
         document.getElementById("notification").style.backgroundColor = 'rgb(157, 231, 107)';
-        location.href ="loginPWA/paginas/page2.html";
+        location.href ="paginas/page2.html";
     } else {
         document.getElementById("notification").innerHTML = 'Error!';
         document.getElementById("notification").style.display = 'block';
