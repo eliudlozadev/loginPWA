@@ -71,6 +71,6 @@ self.addEventListener('fetch', event => {
             if ( event.request.headers.get('accept').includes('text/html') ) {
                 return caches.match('pages/offline.html');
             };
-            event.respondWith(respuesta);
         });
+    event.respondWith(respuesta);
 });
